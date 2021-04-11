@@ -23,42 +23,16 @@
  * No warranties are given.
  */
 
-namespace Steamless.ViewModel
+namespace Steamless.Unpacker.Variant21.x86.Classes
 {
-    using API.Services;
-    using GalaSoft.MvvmLight.Ioc;
-    using Microsoft.Practices.ServiceLocation;
-    using Model;
-
-    public class ViewModelLocator
+    /// <summary>
+    /// Steam Stub Variant 2.1 DRM Flags
+    /// </summary>
+    public enum DrmFlags
     {
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        static ViewModelLocator()
-        {
-            // Setup the locator provider..
-            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
-            // Register our types..
-            SimpleIoc.Default.Register<IDataService, DataService>();
-            SimpleIoc.Default.Register<LoggingService>();
-            SimpleIoc.Default.Register<MainWindowViewModel>();
-        }
-
-        /// <summary>
-        /// Gets the main window view model.
-        /// </summary>
-        public MainWindowViewModel MainWindow => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
-
-        /// <summary>
-        /// Gets the main data service.
-        /// </summary>
-        public IDataService DataService => ServiceLocator.Current.GetInstance<IDataService>();
-
-        /// <summary>
-        /// Gets the logging service.
-        /// </summary>
-        public LoggingService LoggingService => ServiceLocator.Current.GetInstance<LoggingService>();
+        NoModuleVerification = 0x02,
+        NoEncryption = 0x04,
+        NoOwnershipCheck = 0x10,
+        NoDebuggerCheck = 0x20,
     }
 }

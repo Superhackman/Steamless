@@ -23,42 +23,18 @@
  * No warranties are given.
  */
 
-namespace Steamless.ViewModel
-{
-    using API.Services;
-    using GalaSoft.MvvmLight.Ioc;
-    using Microsoft.Practices.ServiceLocation;
-    using Model;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
-    public class ViewModelLocator
-    {
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        static ViewModelLocator()
-        {
-            // Setup the locator provider..
-            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
-            // Register our types..
-            SimpleIoc.Default.Register<IDataService, DataService>();
-            SimpleIoc.Default.Register<LoggingService>();
-            SimpleIoc.Default.Register<MainWindowViewModel>();
-        }
-
-        /// <summary>
-        /// Gets the main window view model.
-        /// </summary>
-        public MainWindowViewModel MainWindow => ServiceLocator.Current.GetInstance<MainWindowViewModel>();
-
-        /// <summary>
-        /// Gets the main data service.
-        /// </summary>
-        public IDataService DataService => ServiceLocator.Current.GetInstance<IDataService>();
-
-        /// <summary>
-        /// Gets the logging service.
-        /// </summary>
-        public LoggingService LoggingService => ServiceLocator.Current.GetInstance<LoggingService>();
-    }
-}
+[assembly: AssemblyTitle("Steamless.Unpacker.Variant21.x86")]
+[assembly: AssemblyDescription("Steamless SteamStub Variant v2.1 (x86) Unpacker")]
+[assembly: AssemblyConfiguration("Release")]
+[assembly: AssemblyCompany("atom0s")]
+[assembly: AssemblyProduct("Steamless.Unpacker.Variant21.x86")]
+[assembly: AssemblyCopyright("Copyright © atom0s 2015 - 2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: ComVisible(false)]
+[assembly: Guid("a40154cd-a0fd-4371-8099-ce277e0989af")]
+[assembly: AssemblyVersion("1.0.0.7")]
+[assembly: AssemblyFileVersion("1.0.0.7")]

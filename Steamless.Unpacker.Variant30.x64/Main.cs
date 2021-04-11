@@ -1,5 +1,5 @@
 ﻿/**
- * Steamless - Copyright (c) 2015 - 2019 atom0s [atom0s@live.com]
+ * Steamless - Copyright (c) 2015 - 2020 atom0s [atom0s@live.com]
  *
  * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to
@@ -98,10 +98,10 @@ namespace Steamless.Unpacker.Variant30.x64
             var bind = f.GetSectionData(".bind");
 
             // Attempt to locate the known v3.x signature..
-            var varient = Pe64Helpers.FindPattern(bind, "E8 00 00 00 00 50 53 51 52 56 57 55 41 50");
-            if (varient == 0) return 0;
+            var variant = Pe64Helpers.FindPattern(bind, "E8 00 00 00 00 50 53 51 52 56 57 55 41 50");
+            if (variant == 0) return 0;
 
-            // Attempt to determine the varient version..
+            // Attempt to determine the variant version..
             var offset = Pe64Helpers.FindPattern(bind, "48 8D 91 ?? ?? ?? ?? 48"); // 3.0
             if (offset == 0)
                 offset = Pe64Helpers.FindPattern(bind, "48 8D 91 ?? ?? ?? ?? 41"); // 3.1
